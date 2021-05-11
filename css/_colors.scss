@@ -1,0 +1,15 @@
+// Colours required for the theme file.
+$primary: #121212;
+$link-color: #0D6CBA;
+
+$dark0: #121212;
+$dark1: lighten($dark0, 5%);
+
+$background-color: $dark0;
+$text-color: rgba(256, 256, 256, 0.87);
+$hint-color: rgba(256, 256, 256, 0.6);
+$error-color: #CF6679;
+
+$color1: #95cfad;
+$color2: #93a3c6;
+$color3: #85e5f3;

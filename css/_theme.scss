@@ -1,0 +1,415 @@
+/*******************************************************************************
+MeyerWeb Reset
+*******************************************************************************/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/*******************************************************************************
+Theme Styles
+*******************************************************************************/
+* {
+  color: inherit;
+  box-sizing: border-box;
+}
+
+body {
+  box-sizing: border-box;
+  color: $text-color;
+  background: $background-color;
+  font-size: 16px;
+  font-family: 'Courier Prime', Courier, monospace;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+
+  @media print {
+    background-color: white;
+    font-family: serif;
+    color: black;
+  }
+}
+
+header {
+  background-color: $primary;
+
+  @media print {
+    background-color: white;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 10px 0;
+  font-weight: 700;
+  color: $text-color;
+}
+
+h1 {
+  font-size: 36px;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 32px;
+}
+
+h3 {
+  font-size: 24px;
+}
+
+h4 {
+  font-size: 21px;
+}
+
+h5 {
+  font-size: 18px;
+}
+
+h6 {
+  font-size: 16px;
+}
+
+p {
+  margin: 10px 0 15px 0;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+
+  @media print{
+    text-align: justify;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: $link-color;
+  text-shadow: none;
+
+  transition: color 0.5s ease;
+  transition: text-shadow 0.5s ease;
+  -webkit-transition: color 0.5s ease;
+  -webkit-transition: text-shadow 0.5s ease;
+  -moz-transition: color 0.5s ease;
+  -moz-transition: text-shadow 0.5s ease;
+  -o-transition: color 0.5s ease;
+  -o-transition: text-shadow 0.5s ease;
+  -ms-transition: color 0.5s ease;
+  -ms-transition: text-shadow 0.5s ease;
+
+  @media print{
+    color: inherit;
+    text-decoration: underline;
+    &:link:after, &:visited:after { 
+      content: " (" attr(href) ")";
+    }
+  }
+}
+
+a:hover,
+a:focus {
+  text-decoration: underline;
+}
+
+em,
+cite {
+  font-style: italic;
+}
+
+strong {
+  font-weight: bold;
+}
+
+img {
+  max-width: 100%;
+}
+
+blockquote {
+  color: $text-color;
+  margin-bottom: 20px;
+  padding: 0 0 0 20px;
+  border-left: 3px solid $primary;
+}
+
+ul,
+ol,
+dl {
+  margin-bottom: 15px;
+}
+
+ul {
+  list-style-position: inside;
+  list-style: disc;
+  padding-left: 20px;
+}
+
+ol {
+  list-style-position: inside;
+  list-style: decimal;
+  padding-left: 20px;
+}
+
+dl dt {
+  font-weight: bold;
+}
+
+dl dd {
+  padding-left: 20px;
+  font-style: italic;
+}
+
+dl p {
+  padding-left: 20px;
+  font-style: italic;
+}
+
+hr {
+  height: 1px;
+  margin-bottom: 5px;
+  border: none;
+}
+
+table {
+  border: 1px solid #373737;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+th {
+  padding: 10px;
+  background: #373737;
+  color: #fff;
+}
+
+td {
+  padding: 10px;
+  border: 1px solid #373737;
+}
+
+form {
+  background: #f2f2f2;
+  padding: 20px;
+}
+
+code {
+  font-family: monospace;
+  background: #e8e8e8;
+  padding: 0.1em 0.25em;
+  border-radius: 0.2rem;
+
+  @media print{
+    background: none;
+  }
+}
+
+pre {
+  overflow: auto;
+}
+
+pre > code{
+  background: #002b36;
+  display: block;
+  font-size: 14px;
+}
+
+*:focus {
+  outline: none;
+}
+
+@media screen and (max-width: 480px) {
+  body {
+    font-size: 14px;
+  }
+
+  h1 {
+    font-size: 28px;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+
+  h3 {
+    font-size: 21px;
+  }
+
+  h4 {
+    font-size: 18px;
+  }
+
+  h5 {
+    font-size: 14px;
+  }
+
+  h6 {
+    font-size: 12px;
+  }
+
+  code,
+  pre {
+    font-size: 11px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  body {
+    font-size: 14px;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  h2 {
+    font-size: 21px;
+  }
+
+  h3 {
+    font-size: 18px;
+  }
+
+  h4 {
+    font-size: 16px;
+  }
+
+  h5 {
+    font-size: 14px;
+  }
+
+  h6 {
+    font-size: 12px;
+  }
+
+  code,
+  pre {
+    min-width: 240px;
+    max-width: 320px;
+    font-size: 11px;
+  }
+}
+
+figure{
+  text-align: center;
+  padding: 10px;
+  margin: 10px 0 10px 0;
+}
+
+figcaption{
+  font-size: 90%;
+}
+
+svg {
+  max-width: 100%;
+}

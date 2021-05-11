@@ -1,0 +1,60 @@
+---
+---
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Crossword Tools</title>
+    <meta name="theme-color" content="#121212" />
+    <meta name="description" content="An offline crossword and anagram solver.">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link rel="manifest" href="manifest.webmanifest">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <script src="script.js" type="text/javascript" defer></script>
+</head>
+
+
+
+<body>
+    <div id="inputs">
+        <div class="content">
+            <div id="query-container">
+            </div>
+            <div id="controls">
+                <div id="add-controls">
+                    <button class="add-button" id="add-anagram" type="button">ADD ANAGRAM</button>
+                    <button class="add-button" id="add-pattern" type="button">ADD PATTERN</button>
+                </div>
+                <button id="go-button" type="button" disabled aria-label="Search">{% include search-icon.svg %}{% include loading_icon.svg %}</button>
+            </div>
+        </div>
+    </div>
+    <div class="content">
+        <div id="status">
+            <span id="status-text"></span>
+        </div>
+        <div id="about-text">
+            <h1>Crossword Assistant</h1>
+            <p>Use this crossword assistant to solve anagrams and to find words which match a pattern. After being loaded for the first time, the website doesn't need to download anything again and will work offline.</p>
+            <h2>How to use</h2>
+            <ol>
+                <li>Add a constraint by clicking on the appropriate button. </li>
+                <li>Input the letters using ? or . for any unknown letters (the space key will insert a ?).</li>
+                <li>Add any additional constraints by clicking on the appropriate buttons to add them. A constraint can be removed
+                    by using the {% include delete-icon.svg %} button next to the constraint. You can toggle the type of the current constraint by tapping on the type.</li>
+                <li>Hit the {% include search-icon.svg %} button.</li>
+            </ol>
+        </div>
+        <div id="results">
+        </div>
+        <div id="limit-reached-wrapper">
+            <span id="limit-reached">Limit reached - There may be more solutions.</span>
+        </div>
+        <button id="install-button" type="button">{% include install_icon.svg %}Install as PWA</button>
+    </div>
+    
+</body>
+
+</html>

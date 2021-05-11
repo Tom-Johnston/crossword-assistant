@@ -1,0 +1,279 @@
+---
+---
+@import '_colors.scss';
+@import '_theme.scss';
+
+
+$width: 720px;
+
+p, li{
+    fill: $text-color;
+}
+
+.icon{
+    height: 24px;
+    vertical-align: bottom;
+    fill: inherit;
+}
+
+input {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid $text-color;
+    outline: none;
+    height: 2rem;
+    width: 100%;
+    font-size: 16px;
+  }
+  
+  button{
+    color: #fff;
+    border: none;
+    border-radius: 2px;
+    font-family: 'Courier Prime', Courier, monospace;
+    height: 2rem;
+    padding: 0 16px;
+    text-transform: uppercase;
+    vertical-align: middle;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+.query {
+    display: flex;
+    padding: 8px;
+    align-items: center;
+}
+
+.query-content{
+    margin-left: 10px;
+    flex-grow: 1;
+    font-family: 'Courier Prime', Courier, monospace;
+    color: $text-color;
+    border-color: $hint-color;
+}
+
+.content{
+    margin-left: 15px;
+    margin-right: 15px;
+    max-width: $width;
+    overflow: visible;
+    
+}
+
+.query-type[data-query-type=anagram]{
+    background-color: transparent;
+    border: $color1 solid 1px;
+    border-radius: 4px;
+    color: $color1;
+
+    &:hover, &:focus{
+        background-color: rgba(149, 207, 173, 0.12);
+    }
+}
+
+#add-anagram{
+    background-color: $color1;
+    border-radius: 4px;
+    color: black;
+
+    &:focus, &:hover{
+        background-color: darken($color1, 12%)
+    }
+}
+
+.query-type[data-query-type=pattern]{
+    background-color: transparent;
+    border: $color2 solid 1px;
+    border-radius: 4px;
+    color: $color2;
+
+    &:focus, &:hover{
+        background-color: rgba(147, 163, 198, 0.12);
+    }
+}
+
+#add-pattern{
+    background-color: $color2;
+    border-radius: 4px;
+    color: black;
+
+    &:focus, &:hover{
+        background-color: darken($color2, 12%)
+    }
+}
+
+.query-remove{
+    background-color: transparent;
+    position: relative;
+    border-radius: 50%;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    width: 32px;
+    font-weight: bold;
+}
+
+.query-remove:focus svg  path, .query-remove:hover svg path{
+    fill: $error-color;
+}
+
+.add-button{
+    font-weight: bold;
+    font-family: 'Courier Prime', Courier, monospace;
+}
+
+#controls{   
+    padding: 8px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+#add-controls{
+    display: flex;
+    justify-content: space-around;
+    flex-grow: 1;
+    overflow-x: auto;
+}
+
+#install-button{
+    background: transparent;
+    color: $hint-color;
+    display: none;
+    padding: 0;
+    text-transform: none;
+
+    &:focus, &:hover{
+        color: $error-color;
+    }
+}
+
+#install-icon{
+    display: inline-block;
+    padding: 0;
+    padding-right: 0.1rem;
+    margin: 0;
+    height: 24px;
+    vertical-align: middle;
+    fill: $text-color;
+}
+
+#install-button:focus > svg, #install-button:hover > svg{
+    fill: $error-color;
+}
+
+#inputs{
+    border-radius: 0 0 2px 2px;
+    padding-top: 15px;
+    background-color: $dark1;
+}
+
+.results{
+    display: grid;
+    margin-top: 16px;
+}
+
+.result{
+    display: inline-block;
+    padding: 0.5em;
+    margin: 0.5em;
+    // border: solid 2px $base03;
+    border-radius: 2px;
+    background-color: $dark1;
+    text-align: center;
+    font-family: 'Courier Prime', Courier, monospace;
+}
+
+.result-padding{
+    display: inline-block;
+    margin: 8px;
+}
+
+#go-button{
+    background-color: $color3;
+    border-radius: 50%;
+    color: black;
+    fill: black;
+    padding: .5em;
+    width: 3em; 
+    height: 3em;
+    transform: translateY(50%);
+
+    &:focus, &:hover {
+        background-color: darken($color3, 12%);
+    }
+
+    &:disabled{
+        background-color: adjust-color($color:$color3, $saturation: -50%);
+    }
+}
+
+#loading-icon{
+    display: none;
+}
+
+#go-button:disabled #loading-icon{
+    display: block;
+}
+
+#go-button:disabled #search-icon{
+    display: none;
+}
+
+#search-icon{
+    height: 2em;
+    width: 2em;
+}
+
+#status{
+    padding: 8px;
+}
+
+#status-text{
+    color: $hint-color;
+    font-size: 14px;
+
+    &.error{
+        color: $error-color;
+    }
+}
+
+
+
+#limit-reached-wrapper{
+    display: flex;
+    justify-content: center;
+    padding-top: 15px;
+    padding-bottom: 30px;
+}
+
+#limit-reached{
+    display: none;
+    color: $error-color;
+}
+
+@media (min-width: $width + 2*15px){
+
+    .content{
+        margin: 0 auto;
+    }
+}
+
+.none{
+    display: none;
+}
+
+
+@font-face {
+    font-family: "Courier Prime";
+    src: url("../fonts/courier-prime-regular.ttf");
+    font-weight: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Courier Prime";
+    src: url("../fonts/courier-prime-bold.ttf");
+    font-weight: bold;
+    font-display: swap;
+}
