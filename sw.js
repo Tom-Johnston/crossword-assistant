@@ -1,4 +1,4 @@
-var CACHE_NAME = 'crossword-solver-v1.0.0';
+var CACHE_NAME = 'crossword-assistant-v1.0.1';
 
 self.addEventListener('install', function(event) {
   // Perform install steps
